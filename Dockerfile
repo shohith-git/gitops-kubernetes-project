@@ -4,8 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir --upgrade "setuptools>=78.1.1" && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade "setuptools>=78.1.1" && \ pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
 
