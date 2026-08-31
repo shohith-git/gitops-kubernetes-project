@@ -45,6 +45,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build --provenance=false --sbom=false -t shohithdocker/gitops-demo:${{ github.sha }} .
+
+      - name: Verify installed Python packages
+        run: |
+          docker run --rm shohithdocker/gitops-demo:${{ github.sha }} python -c "import setuptools, msgpack; print('setuptools:', setuptools.__version__); print('msgpack:', msgpack.__version__)"
+
       - name: Scan Docker image with Trivy
         uses: aquasecurity/trivy-action@master
         with:
