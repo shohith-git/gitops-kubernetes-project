@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: gitops-demo
-          image: shohithdocker/gitops-demo:09c475ab2795b118e4abf4f59a8f85f63b17524e
+          image: shohithdocker/gitops-demo:20d80991a68a76db2202692b83a154ae55f43895
           ports:
             - containerPort: 5000
